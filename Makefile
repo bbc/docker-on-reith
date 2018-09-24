@@ -52,7 +52,7 @@ all:
 	-grep -v 'meta name="generator"' $(index) > indeX
 	-awk -v generator="$(deb) on $(hostname) at $(now)" '{print}/application-name/{print "<meta name=\"generator\" content=\""generator"\">"}' indeX > indeX1
 	-mv indeX1 $(index)
-	-rm -f indeX
+	-rm -f indeX indeX1
 
 	# run turn src into a debian tree
 	fakeroot dpkg-deb -Zgzip --build src $(deb)
