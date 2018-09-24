@@ -1,0 +1,11 @@
+Package: bbc-newslabs-docker-on-reith
+Maintainer: Dave Bevan <bbcnewslabsteam@bbc.co.uk>
+Depends: docker-ce
+Description:
+ Installs docker-ce with appopriate network configurations for on-Reith use (proxy, networks etc).
+ Auto-configures docker in SWARM mode, with over-the-network control enabled.
+Date: Mon 24 Sep 12:05:28 BST 2018
+Version: 0.0.0.1
+Vcs-Git: https://github.com/bbc/newslabs-docker-on-reith
+Vcs-Browser: https://github.com/bbc/newslabs-docker-on-reith
+Vcs-Revision: https://github.com/bbc/newslabs-docker-on-reith/commit/8cbe655278440757f15910e54255f6bc9289c736

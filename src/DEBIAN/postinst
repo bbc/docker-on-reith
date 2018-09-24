@@ -1,0 +1,25 @@
+#!/bin/bash
+
+set -e
+. /usr/share/debconf/confmodule
+db_version 2.0
+
+config_docker_networks()
+{
+    docker network rm docker_gwbridge || true
+    docker network create --subnet 192.168.1.0/24 --gateway 192.168.1.1 -o com.docker.network.bridge.enable_icc=false -o com.docker.network.bridge.name=docker_gwbridge docker_gwbridge || true
+    docker swarm init || true
+    docker network rm ingress || true
+    docker network create -d overlay --ingress --subnet=192.168.2.0/24 --gateway=192.168.2.1 bbc-ingress || true
+    docker network create -d overlay --subnet 192.168.3.0/24 --gateway 192.168.3.1 --attachable bbc-overlay || true
+    docker network ls
+}
+
+case "$1" in
+    configure)
+        # after install
+        # after reconfigure
+        usermod -aG docker bbcadmin
+        config_docker_networks
+    ;;
+esac
