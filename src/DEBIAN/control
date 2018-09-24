@@ -1,11 +1,13 @@
 Package: bbc-newslabs-docker-on-reith
+Architecture: all
 Maintainer: Dave Bevan <bbcnewslabsteam@bbc.co.uk>
-Depends: docker-ce
+Depends: bbc-eng-bsd-ssl, docker-ce
 Description:
  Installs docker-ce with appopriate network configurations for on-Reith use (proxy, networks etc).
  Auto-configures docker in SWARM mode, with over-the-network control enabled.
-Date: Mon 24 Sep 12:05:28 BST 2018
-Version: 0.0.0.1
+ Includes the BBC certs pack, to allow login to registries such as registry.pod.jupiter.bbc.co.uk.
+Date: Mon 24 Sep 12:32:47 BST 2018
+Version: 0.0.0.4
 Vcs-Git: https://github.com/bbc/newslabs-docker-on-reith
 Vcs-Browser: https://github.com/bbc/newslabs-docker-on-reith
-Vcs-Revision: https://github.com/bbc/newslabs-docker-on-reith/commit/8cbe655278440757f15910e54255f6bc9289c736
+Vcs-Revision: https://github.com/bbc/newslabs-docker-on-reith/commit/b80744acfe5781ab929bd22300628e07dc2b12cc - includes un-committed changes
