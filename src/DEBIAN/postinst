@@ -20,7 +20,7 @@ case "$1" in
     configure)
         # after install
         # after reconfigure
-        usermod -aG docker bbcadmin
+        usermod -aG docker bbcadmin || true
         config_docker_networks
     ;;
 esac
