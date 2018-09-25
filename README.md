@@ -14,3 +14,5 @@ It will also configure environment variables that allow the docker daemon to con
 For hosts built from the **BBC NPF Ubuntu** distro, it will add the user `bbcadmin` to the `docker` group.
 
 Other, personal, account holders wishing to use the `docker` command will require additional configuration: `sudo usermod -aG docker <username>`. Once completed, the user concerned will need to logout and back in again before being able to execute the docker command itself.
+
+The pkg also installs the https://github.com/bbc/eng-bsd-ssl package, which allows the docker daemon to connect to **BBC CA** certificate-protected on-Reith docker registry servers such as https://registry.pod.jupiter.bbc.co.uk/v2/_catalog.
